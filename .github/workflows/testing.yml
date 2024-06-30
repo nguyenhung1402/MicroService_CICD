@@ -12,7 +12,7 @@ jobs:
         id: cache-deps
         run: |
           cd user
-          ./github/actions/cached-deps --caching 'false'
+          ./.github/actions/cached-deps --caching 'false'
       - name: Output information
         run: echo "Cache used? ${{steps.cache-deps.outputs.used-cache}}"
       - name: Set up QEMU
