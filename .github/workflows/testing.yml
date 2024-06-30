@@ -25,8 +25,8 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: check code
         run: ls
-      # - name: Build Docker Image
-      #   run: docker build -t nguyenhung1402/user  .
-      # - name: Publish Image to docker hub
-      #   run: docker push nguyenhung1402/user 
+      - name: Build Docker Image
+        run: docker build -t nguyenhung1402/user  ./user
+      - name: Publish Image to docker hub
+        run: docker push nguyenhung1402/user 
       
