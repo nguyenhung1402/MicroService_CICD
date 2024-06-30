@@ -1,0 +1,21 @@
+name: Deploy user
+
+on:
+  push:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Go to user
+        run: cd user
+      - name: Login to docker hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}    
+      - name: Build Docker Image
+        run: docker build -t nguyenhung1402/user  .
+      - name: Publish Image to docker hub
+        run: docker push nguyenhung1402/user 
+      
