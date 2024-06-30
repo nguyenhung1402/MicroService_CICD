@@ -4,7 +4,7 @@ import dbConnection from "./dbConfig/dbConnection.js";
 
 // MONGODB CONNECTION
 dbConnection();
-// Test
+// Test 2
 
 const PORT = process.env.PORT || 8800;
 
