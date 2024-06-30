@@ -14,6 +14,11 @@ jobs:
         run: | 
           cd \user
           ls
+          npm i
+      - name: Check install
+        run: |
+          cd user
+          ls
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
