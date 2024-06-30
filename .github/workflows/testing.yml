@@ -11,7 +11,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Go to user
-        run: cd user
+        run: | 
+          cd \user
+          ls
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
