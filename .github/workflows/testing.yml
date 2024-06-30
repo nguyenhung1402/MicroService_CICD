@@ -1,8 +1,6 @@
 name: Deploy user
 
-on:
-  push:
-
+on: push
 
 jobs:
   build:
@@ -10,15 +8,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Go to user
-        run: | 
-          cd \user
-          ls
-          npm i
-      - name: Check install
+      - name: Load and Cache dependencies
+        id: cache-deps
         run: |
           cd user
-          ls
+          ./github/actions/cached-deps --caching 'false'
+      - name: Output information
+        run: echo "Cache used? ${{steps.cache-deps.outputs.used-cache}}"
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
