@@ -27,7 +27,7 @@ jobs:
           cd user
           npm install
           npm run test
-  checkQuantity:
+  checkQuality:
     runs-on: ubuntu-latest
     needs: [testCompany, testUser]
     steps:
