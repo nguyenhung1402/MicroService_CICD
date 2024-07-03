@@ -37,10 +37,7 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: company
-          args: >
-              -Dsonar.organization=cuong199344
-              -Dsonar.projectKey=cuong199344
-              -Dsonar.python.coverage.reportPaths=coverage.xml
+
   checkQualityJob:
     runs-on: ubuntu-latest
     needs: [testCompany, testUser]
@@ -53,10 +50,7 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: job
-          args: >
-              -Dsonar.organization=cuong199344
-              -Dsonar.projectKey=cuong199344
-              -Dsonar.python.coverage.reportPaths=coverage.xml
+
   checkQualityUser:
     runs-on: ubuntu-latest
     needs: [testCompany, testUser]
@@ -69,7 +63,3 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: user
-          args: >
-              -Dsonar.organization=cuong199344
-              -Dsonar.projectKey=cuong199344
-              -Dsonar.python.coverage.reportPaths=coverage.xml
