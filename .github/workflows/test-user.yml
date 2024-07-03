@@ -1,11 +1,8 @@
 name: Test User
-
 on: 
   pull_request:
     paths:
     - 'user/**'
-
-
 jobs:
   test:
     runs-on: ubuntu-latest
