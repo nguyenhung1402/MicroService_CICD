@@ -1,11 +1,8 @@
 name: Test Job
-
 on: 
   pull_request:
     paths:
     - 'job/**'
-
-
 jobs:
   checkQuality:
     runs-on: ubuntu-latest
@@ -19,6 +16,6 @@ jobs:
         with:
           projectBaseDir: job
           args: >
-              -Dsonar.organization=cuong199344
-              -Dsonar.projectKey=cuong199344
+              -Dsonar.organization=nguyenhung1402
+              -Dsonar.projectKey=nguyenhung1402
               -Dsonar.python.coverage.reportPaths=coverage.xml
